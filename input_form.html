@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<br>
+<div><label for="input">Фамилия </label></br><input type="text" id="surname" value=""></div>
+<div><label for="input"> Имя </label></br><input type="text" id="name" value=""></div>
+<div><label for="input">Отчество</label> </br><input type="text" id="patro" value=""></div>
+<button onclick="correctName()">Готово!</button>
+<div id="result"></div>
+<script>
+function clearInput(){
+    document.getElementById('surname').innerHTML.value="";
+    document.getElementById('name').innerHTML.value="";
+    document.getElementById('patro').innerHTML.value-"";
+}
+
+    function correctName(){
+let surname=document.getElementById('surname').value;
+surname=surname.trim().toLowerCase();
+let changedSurname=surname[0].toUpperCase()+surname.slice(1);
+
+let name=document.getElementById("name").value;
+name=name.trim().toLowerCase();
+let changedName=name[0].toUpperCase()+name.slice(1);
+
+let patro=document.getElementById("patro").value;
+patro=patro.trim().toLowerCase();
+let changedPatro=patro[0].toUpperCase()+patro.slice(1);
+
+let fullName="Вы ввели: "+"Фамилия: "+changedSurname+", "+"Имя: "+changedName+", "+"Отчество: "+changedPatro+";";
+let result=document.getElementById('result');
+result.innerHTML=fullName;
+clearInput();
+    }
+</script>
+
+</body>
+</html>
